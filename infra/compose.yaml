@@ -1,0 +1,18 @@
+# docker-compose.yml
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: freelance-calculator-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: freelance_calculator
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
